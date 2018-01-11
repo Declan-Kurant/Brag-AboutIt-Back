@@ -6,7 +6,9 @@ const mongoose = require('mongoose')
 // } else {
 //
 // }
-mongoose.connect('mongodb://localhost/3001', { useMongoClient: true })
+mongoose.connect('mongodb://localhost/elder-messenger', {
+	useMongoClient: true
+})
 
 mongoose.Promise = Promise
 

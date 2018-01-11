@@ -1,16 +1,15 @@
-const mongoose = require('./connection')
+const mongoose = require('./connection.js')
 
 const UserSchema = new mongoose.Schema({
 	username: '',
 	contacts: [],
 	recieved_messages: [] //array of ID's
-
-)
+})
 const MessageSchema = new mongoose.Schema({
 	txt_content: '',
-	audio: '<URL>',
-	recurring_status: False, //if true, message is sent more than once
-	delivery_date: date
+	audio: '', //URL TO API
+	recurring_status: false, //if true, message is sent more than once
+	delivery_date: { type: Date, default: Date.now }
 })
 
 const User = mongoose.model('User', UserSchema)

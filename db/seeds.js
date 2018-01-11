@@ -1,17 +1,14 @@
-const Schema = require('./schema')
-
-const User = Schema.User
+const Schema = require('./schema.js')
 const Message = Schema.Message
+const MessageData = require('./message-data.json')
 
-//
-// Coffee.remove({})
-// 	.catch(err => console.log(err))
-// 	.then(() => {
-// 		console.log('coffees removed successfully')
-//
-// 		coffees.forEach((coffee, i) => {
-// 			coffees[i].save((err, coffee) => {
-// 				err ? console.log('error creating coffee') : console.log(coffee)
-// 			})
-// 		})
-// 	})
+Message.remove({})
+	.then(() => {
+		Message.collection.insert(MessageData).then(messages => {
+			console.log(messages)
+			process.exit()
+		})
+	})
+	.catch(err => {
+		console.log(err)
+	})

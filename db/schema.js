@@ -1,21 +1,14 @@
 const mongoose = require('./connection.js')
 
-const UserSchema = new mongoose.Schema({
-	username: '',
-	contacts: [],
-	recieved_messages: [] //array of ID's
-})
-const MessageSchema = new mongoose.Schema({
-	txt_content: '',
-	audio: '', //URL TO API
-	recurring_status: false, //if true, message is sent more than once
-	delivery_date: { type: Date, default: Date.now }
+const BoastSchema = new mongoose.Schema({
+	txt_content: String,
+	is_trophy: false, //if true, boast gets trophy symbol
+	is_scholar: false, //if true, boast gets academic symbol
+	is_plus_one: false,
+	is_brain: false,
+	is_thumbs_up: false
 })
 
-const User = mongoose.model('User', UserSchema)
-const Message = mongoose.model('Message', MessageSchema)
+const Boast = mongoose.model('Boast', BoastSchema)
 
-module.exports = {
-	User,
-	Message
-}
+module.exports = { Boast }

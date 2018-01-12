@@ -1,11 +1,11 @@
 const Schema = require('./schema.js')
-const Message = Schema.Message
-const MessageData = require('./message-data.json')
+const Boast = Schema.Boast
+const BoastData = require('./seeds.json')
 
-Message.remove({})
+Boast.remove({})
 	.then(() => {
-		Message.collection.insert(MessageData).then(messages => {
-			console.log(messages)
+		Boast.collection.insert(BoastData).then(boasts => {
+			console.log(boasts)
 			process.exit()
 		})
 	})

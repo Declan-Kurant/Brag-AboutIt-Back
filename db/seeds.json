@@ -1,0 +1,26 @@
+[
+	{
+		"txt_content": "I can't believe how believe my grandson learned to code!",
+		"is_trophy": false,
+		"is_scholar": true,
+		"is_plus_one": false,
+		"is_brain": false,
+		"is_thumbs_up": false
+	},
+	{
+		"txt_content": "My granddaughter Elizabeth actually just became a doctor",
+		"is_trophy": false,
+		"is_scholar": false,
+		"is_plus_one": true,
+		"is_brain": false,
+		"is_thumbs_up": false
+	},
+	{
+		"txt_content": "Grandpa flew jets in the air force COOL!",
+		"is_trophy": false,
+		"is_scholar": false,
+		"is_plus_one": false,
+		"is_brain": false,
+		"is_thumbs_up": false
+	}
+]

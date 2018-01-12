@@ -4,7 +4,7 @@ const cors = require('cors')
 const mongoose = require('./db/schema')
 
 const Schema = require('./db/schema')
-const Message = Schema.Message
+const Boast = Schema.Boast
 
 const app = express()
 
@@ -12,52 +12,52 @@ app.use(parser.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-	console.log('home route')
-	Message.find()
-		.then(messages => {
-			res.json(messages)
+	Boast.find()
+		.then(boasts => {
+			res.json(boasts)
 		})
 		.catch(err => {
 			console.log(err)
 		})
 })
 
-app.get('/messages', (req, res) => {
-	console.log('finding messages')
-	Message.find()
-		.then(messages => {
-			res.json(messages)
+app.get('/boasts', (req, res) => {
+	console.log('finding boasts')
+	Boast.find()
+		.then(boasts => {
+			res.json(boasts)
 		})
 		.catch(err => {
 			console.log(err)
 		})
 })
 
-app.get('/messages/:id', (req, res) => {
+app.get('/boasts/:id', (req, res) => {
 	console.log(req.params)
-	Message.findById(req.params.id)
-		.then(message => {
-			res.json(message)
+	Boast.findById(req.params.id)
+		.then(boast => {
+			res.json(boast)
 		})
 		.catch(err => {
 			console.log(err)
 		})
 })
 
-app.post('/messages', (req, res) => {
-	Message.create(req.body)
-		.then(message => {
-			res.json(message)
+app.post('/boasts', (req, res) => {
+	console.log(req.body)
+	Boast.create(req.body)
+		.then(boast => {
+			res.json(boast)
 		})
 		.catch(err => {
 			console.log(err)
 		})
 })
 
-app.delete('/messages/:id', (req, res) => {
-	Message.findByIdAndRemove(req.params.id)
-		.then(message => {
-			res.json(message)
+app.delete('/boasts/:id', (req, res) => {
+	Boast.findByIdAndRemove(req.params.id)
+		.then(boast => {
+			res.json(boast.txt_content)
 		})
 		.catch(err => {
 			console.log(err)

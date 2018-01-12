@@ -11,16 +11,6 @@ const app = express()
 app.use(parser.json())
 app.use(cors())
 
-app.get('/', (req, res) => {
-	Boast.find()
-		.then(boasts => {
-			res.json(boasts)
-		})
-		.catch(err => {
-			console.log(err)
-		})
-})
-
 app.get('/boasts', (req, res) => {
 	console.log('finding boasts')
 	Boast.find()
@@ -32,21 +22,10 @@ app.get('/boasts', (req, res) => {
 		})
 })
 
-app.get('/boasts/:id', (req, res) => {
-	console.log(req.params)
-	Boast.findById(req.params.id)
-		.then(boast => {
-			res.json(boast)
-		})
-		.catch(err => {
-			console.log(err)
-		})
-})
-
 app.post('/boasts', (req, res) => {
-	console.log(req.body)
 	Boast.create(req.body)
 		.then(boast => {
+			console.log(boast)
 			res.json(boast)
 		})
 		.catch(err => {

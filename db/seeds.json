@@ -1,6 +1,8 @@
 [
 	{
 		"txt_content": "I can't believe how believe my grandson learned to code!",
+		"from": "Savta Rena",
+		"about": "Jimmy",
 		"is_trophy": false,
 		"is_scholar": true,
 		"is_plus_one": false,
@@ -9,6 +11,8 @@
 	},
 	{
 		"txt_content": "My granddaughter Elizabeth actually just became a doctor",
+		"from": "Tatu",
+		"about": "Elizabeth",
 		"is_trophy": false,
 		"is_scholar": false,
 		"is_plus_one": true,
@@ -17,6 +21,8 @@
 	},
 	{
 		"txt_content": "Grandpa flew jets in the air force COOL!",
+		"from": "Jimmy",
+		"about": "Grandpa",
 		"is_trophy": false,
 		"is_scholar": false,
 		"is_plus_one": false,

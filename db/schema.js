@@ -2,6 +2,8 @@ const mongoose = require('./connection.js')
 
 const BoastSchema = new mongoose.Schema({
 	txt_content: String,
+	from: '',
+	about: '',
 	is_trophy: false, //if true, boast gets trophy symbol
 	is_scholar: false, //if true, boast gets academic symbol
 	is_plus_one: false,

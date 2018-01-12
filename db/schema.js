@@ -1,7 +1,7 @@
 const mongoose = require('./connection.js')
 
 const BoastSchema = new mongoose.Schema({
-	txt_content: String,
+	txt_content: { type: String, required: [true, 'Please include a message'] },
 	from: '',
 	about: '',
 	is_trophy: false, //if true, boast gets trophy symbol

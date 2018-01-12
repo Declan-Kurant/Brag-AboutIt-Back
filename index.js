@@ -12,7 +12,6 @@ app.use(parser.json())
 app.use(cors())
 
 app.get('/boasts', (req, res) => {
-	console.log('finding boasts')
 	Boast.find()
 		.then(boasts => {
 			res.json(boasts)
